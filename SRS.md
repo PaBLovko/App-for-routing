@@ -12,7 +12,7 @@ Android-приложение “GPS Routing”. С помощью данного
 ***
 Главное меню:
 ***
-![Image alt](https://github.com/AliaksandrZhurkevich/App-for-routing/blob/master/%D0%93%D0%BB%D0%B0%D0%B2%D0%BD%D0%BE%D0%B5%20%D0%BC%D0%B5%D0%BD%D1%8E.png)
+![Image alt]https://github.com/AliaksandrZhurkevich/App-for-routing/blob/master/%D0%93%D0%BB%D0%B0%D0%B2%D0%BD%D0%BE%D0%B5%20%D0%BC%D0%B5%D0%BD%D1%8E%20(2).png
 ***
 Окно прокладки маршрута:
 ***
@@ -21,6 +21,10 @@ Android-приложение “GPS Routing”. С помощью данного
 Окно для отслеживания перемещения:
 ***
 ![Image alt](https://github.com/AliaksandrZhurkevich/App-for-routing/blob/master/%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B5%D1%81%D1%81.png)
+***
+Настройки:
+***
+![Image alt](https://github.com/AliaksandrZhurkevich/App-for-routing/blob/master/%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B8.png)
 ### 2.3 Характеристики пользователей
 ***
 Целевая аудитория данного приложения – люди которым нужно добраться до определенной точки оптимальным путем, а так оно поможет людям, которые не знакомы с местностью. Для этого им нужны базовые знания работы с телефоном.
