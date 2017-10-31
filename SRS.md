@@ -12,7 +12,7 @@ Android-приложение “GPS Routing”. С помощью данного
 ***
 Главное меню:
 ***
-![Image alt]https://github.com/AliaksandrZhurkevich/App-for-routing/blob/master/%D0%93%D0%BB%D0%B0%D0%B2%D0%BD%D0%BE%D0%B5%20%D0%BC%D0%B5%D0%BD%D1%8E%20(2).png
+![Image alt](https://github.com/AliaksandrZhurkevich/App-for-routing/blob/master/%D0%93%D0%BB%D0%B0%D0%B2%D0%BD%D0%BE%D0%B5%20%D0%BC%D0%B5%D0%BD%D1%8E%20(2).png)
 ***
 Окно прокладки маршрута:
 ***
