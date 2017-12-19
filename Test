@@ -1,0 +1,86 @@
+package com.example.user.appforrouting0;
+import com.google.android.gms.maps.model.LatLng;
+
+import java.net.URLDecoder;
+import java.util.List;
+import org.junit.Test;
+import org.junit.experimental.categories.Category;
+
+import static junit.framework.Assert.assertEquals;
+
+public class MakeUrlTest {
+
+    private static final MakeRoute makeTest = new MakeRoute();
+    private static final JSONParser jSon = new JSONParser();
+    private static final double EPSILON = .00001;
+    private static final LatLng SYDNEY = new LatLng(-33.86746, 151.207090);
+    private static final LatLng MELBOURNE = new LatLng(-37.814130, 144.963180);
+    private static final String SYD_MELB_ROUTE_URL = "http://maps.googleapis.com/maps/api/directions/json?origin=" +
+            "-33.86746,151.20709&destination=-37.81413,144.96318&sensor=false&mode=en&alternatives=true&language=null";
+    private static final String SYD_MELB_ROUTE =
+            "rvumEis{y[`NsfA~tAbF`bEj^h{@{KlfA~eA~`AbmEghAt~D|e@jlRpO~yH_\\v}LjbBh~FdvCxu@`nCplDbcBf_B|w"
+                    + "BhIfhCnqEb~D~jCn_EngApdEtoBbfClf@t_CzcCpoEr_Gz_DxmAphDjjBxqCviEf}B|pEvsEzbE~qGfpExjBlqCx}"
+                    + "BvmLb`FbrQdpEvkAbjDllD|uDldDj`Ef|AzcEx_Gtm@vuI~xArwD`dArlFnhEzmHjtC~eDluAfkC|eAdhGpJh}N_m"
+                    + "ArrDlr@h|HzjDbsAvy@~~EdTxpJje@jlEltBboDjJdvKyZpzExrAxpHfg@pmJg[tgJuqBnlIarAh}DbN`hCeOf_Ib"
+                    + "xA~uFt|A|xEt_ArmBcN|sB|h@b_DjOzbJ{RlxCcfAp~AahAbqG~Gr}AerA`dCwlCbaFo]twKt{@bsG|}A~fDlvBvz"
+                    + "@tw@rpD_r@rqB{PvbHek@vsHlh@ptNtm@fkD[~xFeEbyKnjDdyDbbBtuA|~Br|Gx_AfxCt}CjnHv`Ew\\lnBdrBfq"
+                    + "BraD|{BldBxpG|]jqC`mArcBv]rdAxgBzdEb{InaBzyC}AzaEaIvrCzcAzsCtfD~qGoPfeEh]h`BxiB`e@`kBxfAv"
+                    + "^pyA`}BhkCdoCtrC~bCxhCbgEplKrk@tiAteBwAxbCwuAnnCc]b{FjrDdjGhhGzfCrlDruBzSrnGhvDhcFzw@n{@z"
+                    + "xAf}Fd{IzaDnbDjoAjqJjfDlbIlzAraBxrB}K~`GpuD~`BjmDhkBp{@r_AxCrnAjrCx`AzrBj{B|r@~qBbdAjtDnv"
+                    + "CtNzpHxeApyC|GlfM`fHtMvqLjuEtlDvoFbnCt|@xmAvqBkGreFm~@hlHw|AltC}NtkGvhBfaJ|~@riAxuC~gErwC"
+                    + "ttCzjAdmGuF`iFv`AxsJftD|nDr_QtbMz_DheAf~Buy@rlC`i@d_CljC`gBr|H|nAf_Fh{G|mE~kAhgKviEpaQnu@"
+                    + "zwAlrA`G~gFnvItz@j{Cng@j{D{]`tEftCdcIsPz{DddE~}PlnE|dJnzG`eG`mF|aJdqDvoAwWjzHv`H`wOtjGzeX"
+                    + "hhBlxErfCf{BtsCjpEjtD|}Aja@xnAbdDt|ErMrdFh{CzgAnlCnr@`wEM~mE`bA`uD|MlwKxmBvuFlhB|sN`_@fvB"
+                    + "p`CxhCt_@loDsS|eDlmChgFlqCbjCxk@vbGxmCjbMba@rpBaoClcCk_DhgEzYdzBl\\vsA_JfGztAbShkGtEhlDzh"
+                    + "C~w@hnB{e@yF}`D`_Ayx@~vGqn@l}CafC";
+    @Test
+    public void testURL() throws Exception {
+        String url = makeTest.makeURL(SYDNEY.latitude, SYDNEY.longitude, MELBOURNE.latitude, MELBOURNE.longitude, "en");
+        assertEquals(SYD_MELB_ROUTE_URL, url);
+    }
+
+    @Test
+    public void testStartPoint() throws Exception {
+        List<LatLng> points = makeTest.decodePoly(SYD_MELB_ROUTE);
+        LatLng sydney = points.get(0);
+        assertEquals(SYDNEY, sydney);
+    }
+
+    @Test
+    public void testEndPoint() throws Exception {
+        List<LatLng> points = makeTest.decodePoly(SYD_MELB_ROUTE);
+        LatLng melbourne = points.get(points.size() - 1);
+        assertEquals(MELBOURNE, melbourne);
+    }
+
+}
+
+package com.example.user.appforrouting0;
+
+import android.content.Context;
+import android.support.test.InstrumentationRegistry;
+import android.support.test.runner.AndroidJUnit4;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+
+import static junit.framework.Assert.assertEquals;
+import static org.junit.Assert.*;
+
+/**
+ * Instrumented test, which will execute on an Android device.
+ *
+ * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
+ */
+@RunWith(AndroidJUnit4.class)
+public class ExampleInstrumentedTest {
+
+    Context appContext = InstrumentationRegistry.getTargetContext();
+
+    @Test
+    public void useAppContext() throws Exception {
+        assertEquals("com.example.user.appforrouting0", appContext.getPackageName());
+    }
+}
+
+
