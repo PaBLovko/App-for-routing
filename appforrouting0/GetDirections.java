@@ -16,18 +16,9 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.InputStream;
 
-class GetDirections extends AsyncTask<String, String, String> {
-    @Override
-    protected String doInBackground(String... params) {
-        String startAddress = params[0];
-        startAddress = startAddress.replaceAll(" ", "%20");
-        getLatLng(startAddress, false);
+class GetDirections {
 
-        String endingAddress = params[1];
-        endingAddress = endingAddress.replaceAll(" ", "%20");
-        getLatLng(endingAddress, true);
-        return null;
-    }
+    private final MyAsyncTask asyncTask = new MyAsyncTask();
 
     protected void getLatLng(String address, boolean setDestination) {
         String uri = "http://maps.google.com/maps/api/geocode/json?address="
@@ -77,5 +68,22 @@ class GetDirections extends AsyncTask<String, String, String> {
         }
 
     }
-}
 
+    public AsyncTask<String, String, String> getAsyncTask() {
+        return asyncTask;
+    }
+
+    private class MyAsyncTask extends AsyncTask<String, String, String> {
+        @Override
+        protected String doInBackground(String... params) {
+            String startAddress = params[0];
+            startAddress = startAddress.replaceAll(" ", "%20");
+            getLatLng(startAddress, false);
+
+            String endingAddress = params[1];
+            endingAddress = endingAddress.replaceAll(" ", "%20");
+            getLatLng(endingAddress, true);
+            return null;
+        }
+    }
+}
