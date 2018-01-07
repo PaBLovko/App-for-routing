@@ -31,9 +31,6 @@ public class MakeRoute {
     static String LANGUAGE_ENGLISH = "en";
     static String TRANSPORT_DRIVING = "driving";
 
-
-
-
     public void drawRoute(GoogleMap map, Context c, LatLng source, LatLng dest, String language)
     {
         mMap = map;
@@ -94,7 +91,7 @@ public class MakeRoute {
         return urlString.toString();
     }
 
-    private String makeURL (double sourcelat, double sourcelog, double destlat, double destlog,String mode){
+    public String makeURL (double sourcelat, double sourcelog, double destlat, double destlog,String mode){
         StringBuilder urlString = new StringBuilder();
 
         if(mode == null)
@@ -115,7 +112,7 @@ public class MakeRoute {
         return urlString.toString();
     }
 
-    private List<LatLng> decodePoly(String encoded) {
+    public List<LatLng> decodePoly(String encoded) {
 
         List<LatLng> poly = new ArrayList<LatLng>();
         int index = 0, len = encoded.length();
@@ -149,7 +146,7 @@ public class MakeRoute {
         return poly;
     }
 
-    private class connectAsyncTask extends AsyncTask<Void, Void, String> {
+    public class connectAsyncTask extends AsyncTask<Void, Void, String> {
         String url;
         boolean steps;
         connectAsyncTask(String urlPass, boolean withSteps){
@@ -224,7 +221,7 @@ public class MakeRoute {
     /**
      * Class that represent every step of the directions. It store distance, location and instructions
      */
-    private class Step
+    public class Step
     {
         public String distance;
         public LatLng location;
