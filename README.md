@@ -2,7 +2,7 @@
 Aliaksandr Zhurkevich 550503. Mobile app for routing.
 # [Requirments] : https://github.com/AliaksandrZhurkevich/App-for-routing/blob/master/SRS.md
 # UML Diagrams:
-1. [Use case] : https://github.com/AliaksandrZhurkevich/App-for-routing/blob/master/UseCase.png
+1. [Use case](https://github.com/AliaksandrZhurkevich/App-for-routing/blob/master/UseCase.png)
 2. [Class diagram] : https://github.com/AliaksandrZhurkevich/App-for-routing/blob/master/ClassDiagramm.png
 3. [Deployment] : https://github.com/AliaksandrZhurkevich/App-for-routing/blob/master/Component.png
 4. [Activity] : https://github.com/AliaksandrZhurkevich/App-for-routing/blob/master/Activity.png
